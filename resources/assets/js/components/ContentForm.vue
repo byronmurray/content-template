@@ -27,14 +27,12 @@
             </div>
           </div>
 
-          <div class="field is-grouped">
-            <div class="control">
-              <button class="button is-link">Submit</button>
-            </div>
-            <div class="control">
-              <button class="button is-text">Cancel</button>
-            </div>
+          <input type="file" @change="onFileChange" />
+
+          <div id="preview">
+            <img v-if="url" :src="url" />
           </div>
+
 
         </div>
 
@@ -42,7 +40,7 @@
         <div class="column is-8">
 
           <section class="hero is-primary">
-            <div class="hero-body">
+            <div class="hero-body" :style="{ backgroundImage: 'url(' + url + ')' }">
               <div class="container">
                 <h1 class="title">
                   {{ heading }}
@@ -57,65 +55,7 @@
           <section class="hero is-light is-bold">
             <div class="hero-body">
 
-              <div class="text-center" v-html="content">
-
-              </div>
-
-              <div class="columns text-center">
-                <div class="column">
-
-                  <div class="tile is-parent">
-
-                    <article class="tile is-child notification is-info">
-                      <p class="title">Middle tile</p>
-                      <figure class="image is-4by3">
-                        <img src="https://bulma.io/images/placeholders/640x480.png">
-                      </figure>
-                      <p>
-                        <a class="button is-light">Button</a>
-                      </p>
-                    </article>
-
-                  </div>
-
-                </div>
-                <div class="column">
-
-                  <div class="tile is-parent">
-
-                    <article class="tile is-child notification is-info">
-                      <p class="title">Middle tile</p>
-                      <figure class="image is-4by3">
-                        <img src="https://bulma.io/images/placeholders/640x480.png">
-                      </figure>
-                      <p>
-                        <a class="button is-light">Button</a>
-                      </p>
-                    </article>
-
-                  </div>
-
-                </div>
-                <div class="column">
-
-                  <div class="tile is-parent">
-
-                    <article class="tile is-child notification is-info">
-                      <p class="title">Middle tile</p>
-                      <figure class="image is-4by3">
-                        <img src="https://bulma.io/images/placeholders/640x480.png">
-                      </figure>
-                      <p>
-                        <a class="button is-light">Button</a>
-                      </p>
-                    </article>
-
-                  </div>
-
-                </div>
-              </div>
-
-
+              <div class="text-center" v-html="content"> </div>
 
             </div>
           </section>
@@ -129,6 +69,7 @@
   </div>
 </template>
 
+
 <script>
     // es modules
     import Editor from '@tinymce/tinymce-vue';
@@ -138,11 +79,18 @@
           return {
             heading:  'Heading',
             subtitle: 'Subtitle',
-            content:     'The body content'
+            content:  'The body content',
+            url:       null,
           };
         },
         components: {
           'editor': Editor // <- Important part
+        },
+        methods: {
+          onFileChange(e) {
+            const file = e.target.files[0];
+            this.url = URL.createObjectURL(file);
+          }
         },
         mounted() {
             console.log('Component mounted.')
