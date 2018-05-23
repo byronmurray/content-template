@@ -30682,6 +30682,61 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 // es modules
 
@@ -30692,7 +30747,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       heading: 'Heading',
       subtitle: 'Subtitle',
       content: 'The body content',
-      url: null
+      url: null,
+      rows: [],
+      index: false
     };
   },
 
@@ -30700,14 +30757,29 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     'editor': __WEBPACK_IMPORTED_MODULE_0__tinymce_tinymce_vue__["a" /* default */] // <- Important part
   },
   methods: {
-    onFileChange: function onFileChange(e) {
-      var file = e.target.files[0];
-      this.url = URL.createObjectURL(file);
+
+    addRow: function addRow() {
+      this.rows.push({
+        title: "",
+        description: "",
+        url: ""
+      });
+    },
+
+    onFileChange: function onFileChange(event, index) {
+      var file = event.target.files[0];
+      Vue.set(this.rows[index], 'url', URL.createObjectURL(file));
+    },
+
+    titleId: function titleId(index) {
+      return "tile-" + (index + 1);
+    },
+
+    removeElement: function removeElement(index) {
+      this.rows.splice(index, 1);
     }
-  },
-  mounted: function mounted() {
-    console.log('Component mounted.');
   }
+
 });
 
 /***/ }),
@@ -30919,93 +30991,200 @@ var render = function() {
   return _c("div", { staticClass: "container is-fluid" }, [
     _c("div", { staticClass: "notification" }, [
       _c("div", { staticClass: "columns" }, [
-        _c("div", { staticClass: "column is-4" }, [
-          _c("div", { staticClass: "field" }, [
-            _c("label", { staticClass: "label" }, [_vm._v("Heading")]),
-            _vm._v(" "),
-            _c("div", { staticClass: "control" }, [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.heading,
-                    expression: "heading"
-                  }
-                ],
-                staticClass: "input",
-                attrs: { type: "text", placeholder: "Text input" },
-                domProps: { value: _vm.heading },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
+        _c(
+          "div",
+          { staticClass: "column is-4" },
+          [
+            _c("div", { staticClass: "field" }, [
+              _c("label", { staticClass: "label" }, [_vm._v("Heading")]),
+              _vm._v(" "),
+              _c("div", { staticClass: "control" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.heading,
+                      expression: "heading"
                     }
-                    _vm.heading = $event.target.value
-                  }
-                }
-              })
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "field" }, [
-            _c("label", { staticClass: "label" }, [_vm._v("Subtitle")]),
-            _vm._v(" "),
-            _c("div", { staticClass: "control" }, [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.subtitle,
-                    expression: "subtitle"
-                  }
-                ],
-                staticClass: "input",
-                attrs: { type: "text", placeholder: "Text input" },
-                domProps: { value: _vm.subtitle },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
+                  ],
+                  staticClass: "input",
+                  attrs: { type: "text", placeholder: "Text input" },
+                  domProps: { value: _vm.heading },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.heading = $event.target.value
                     }
-                    _vm.subtitle = $event.target.value
-                  }
-                }
-              })
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "field" }, [
-            _c("label", { staticClass: "label" }, [_vm._v("Welcome blurb")]),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "control" },
-              [
-                _c("editor", {
-                  model: {
-                    value: _vm.content,
-                    callback: function($$v) {
-                      _vm.content = $$v
-                    },
-                    expression: "content"
                   }
                 })
-              ],
-              1
-            )
-          ]),
-          _vm._v(" "),
-          _c("input", {
-            attrs: { type: "file" },
-            on: { change: _vm.onFileChange }
-          }),
-          _vm._v(" "),
-          _c("div", { attrs: { id: "preview" } }, [
-            _vm.url ? _c("img", { attrs: { src: _vm.url } }) : _vm._e()
-          ])
-        ]),
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "field" }, [
+              _c("label", { staticClass: "label" }, [_vm._v("Subtitle")]),
+              _vm._v(" "),
+              _c("div", { staticClass: "control" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.subtitle,
+                      expression: "subtitle"
+                    }
+                  ],
+                  staticClass: "input",
+                  attrs: { type: "text", placeholder: "Text input" },
+                  domProps: { value: _vm.subtitle },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.subtitle = $event.target.value
+                    }
+                  }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "field" }, [
+              _c("label", { staticClass: "label" }, [_vm._v("Welcome blurb")]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "control" },
+                [
+                  _c("editor", {
+                    model: {
+                      value: _vm.content,
+                      callback: function($$v) {
+                        _vm.content = $$v
+                      },
+                      expression: "content"
+                    }
+                  })
+                ],
+                1
+              )
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              attrs: { type: "file" },
+              on: { change: _vm.onFileChange }
+            }),
+            _vm._v(" "),
+            _c("div", { attrs: { id: "preview" } }, [
+              _vm.url ? _c("img", { attrs: { src: _vm.url } }) : _vm._e()
+            ]),
+            _vm._v(" "),
+            _vm._l(_vm.rows, function(row, index) {
+              return _c("div", [
+                _c("div", { staticClass: "field" }, [
+                  _c("label", { staticClass: "label" }, [_vm._v("Title")]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "control" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: row.title,
+                          expression: "row.title"
+                        }
+                      ],
+                      staticClass: "input",
+                      attrs: {
+                        id: _vm.titleId(index),
+                        type: "text",
+                        placeholder: "Enter Title for card heading"
+                      },
+                      domProps: { value: row.title },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(row, "title", $event.target.value)
+                        }
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "field" }, [
+                  _c("label", { staticClass: "label" }, [_vm._v("Message")]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "control" }, [
+                    _c("textarea", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: row.description,
+                          expression: "row.description"
+                        }
+                      ],
+                      staticClass: "textarea",
+                      attrs: { placeholder: "Textarea" },
+                      domProps: { value: row.description },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(row, "description", $event.target.value)
+                        }
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("label", { staticClass: "fileContainer" }, [
+                  _c("input", {
+                    attrs: { type: "file", id: index },
+                    on: {
+                      change: function($event) {
+                        _vm.onFileChange($event, index)
+                      }
+                    }
+                  })
+                ])
+              ])
+            }),
+            _vm._v(" "),
+            _c("div", [
+              _c(
+                "button",
+                {
+                  staticClass: "button btn-primary",
+                  on: { click: _vm.addRow }
+                },
+                [_vm._v("Add row")]
+              ),
+              _vm._v(" "),
+              _vm.rows.length != 0
+                ? _c(
+                    "a",
+                    {
+                      staticClass: "button btn-primary",
+                      staticStyle: { cursor: "pointer" },
+                      on: {
+                        click: function($event) {
+                          _vm.removeElement(_vm.index)
+                        }
+                      }
+                    },
+                    [_vm._v("Remove")]
+                  )
+                : _vm._e()
+            ])
+          ],
+          2
+        ),
         _vm._v(" "),
         _c("div", { staticClass: "column is-8" }, [
           _c("section", { staticClass: "hero is-primary" }, [
@@ -31042,7 +31221,45 @@ var render = function() {
               _c("div", {
                 staticClass: "text-center",
                 domProps: { innerHTML: _vm._s(_vm.content) }
-              })
+              }),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "columns" },
+                _vm._l(_vm.rows, function(row, index) {
+                  return _c("div", { staticClass: "column" }, [
+                    _c("div", { staticClass: "card" }, [
+                      _c("div", { staticClass: "card-image" }, [
+                        row.url
+                          ? _c("img", {
+                              attrs: { src: row.url, alt: row.title }
+                            })
+                          : _c("img", {
+                              attrs: {
+                                src:
+                                  "https://bulma.io/images/placeholders/1280x960.png",
+                                alt: "Placeholder image"
+                              }
+                            })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "card-content" }, [
+                        _c("div", { staticClass: "title is-4" }, [
+                          _vm._v(_vm._s(row.title))
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "content" }, [
+                          _vm._v(
+                            "\n                  " +
+                              _vm._s(row.description) +
+                              "\n                "
+                          )
+                        ])
+                      ])
+                    ])
+                  ])
+                })
+              )
             ])
           ])
         ])
