@@ -16,6 +16,7 @@ window.Vue = require('vue');
  */
 
 Vue.component('content-form', require('./components/ContentForm.vue'));
+Vue.component('content-view', require('./components/ContentView.vue'));
 
 const app = new Vue({
     el: '#app'

@@ -2,8 +2,12 @@
 
 @section('content')
 
-  <content-form></content-form>
+  <div class="container is-fluid">
 
+    <div class="notification">
+      <content-form></content-form>
+    </div>
 
+  </div>
 
 @endsection
