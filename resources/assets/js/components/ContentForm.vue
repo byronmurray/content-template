@@ -3,89 +3,163 @@
 <div class="columns">
 
   <div class="column is-4">
-    <div class="field">
-      <label class="label">Heading</label>
-      <div class="control">
-        <input class="input" v-model="heading" type="text" placeholder="Text input">
+
+    <div class="is-fixed">
+
+      <div class="company-section">
+
+        <div class="fileContainer">
+          <label class="label">Conpany Logo</label>
+          <input type="file" @change="onFileChangeLogo" />
+        </div>
+
+        <div class="field">
+          <label class="label">Company Name</label>
+          <div class="control">
+            <input class="input" v-model="name" type="text">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Company Phone</label>
+          <div class="control">
+            <input class="input" v-model="phone" type="text">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Company Email</label>
+          <div class="control">
+            <input class="input" v-model="email" type="text">
+          </div>
+        </div>
+
       </div>
-    </div>
 
-    <div class="field">
-      <label class="label">Subtitle</label>
-      <div class="control">
-        <input class="input" v-model="subtitle" type="text" placeholder="Text input">
+      <div class="hero-section">
+        <div class="field">
+          <label class="label">Cover heading</label>
+          <div class="control">
+            <input class="input" v-model="heading" type="text" placeholder="Text input">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Cover subtitle</label>
+          <div class="control">
+            <input class="input" v-model="subtitle" type="text" placeholder="Text input">
+          </div>
+        </div>
+
+        <div class="fileContainer">
+          <label class="label">Cover image</label>
+          <input type="file" @change="onFileChangeHero" />
+        </div>
+
       </div>
-    </div>
 
-    <div class="field">
-      <label class="label">Welcome blurb</label>
-      <div class="control">
-        <editor v-model="content"></editor>
+      <div class="body-section">
+
+        <div class="field">
+          <label class="label">Welcome blurb</label>
+          <div class="control">
+            <editor v-model="content"></editor>
+          </div>
+        </div>
+
       </div>
-    </div>
 
-    <input type="file" @change="onFileChangeHero" />
+      <div class="call-to-action-section">
+        <h3>Call to actions</h3>
+        <div v-for="(row, index) in rows">
+          <div class="field">
+            <label class="label">Card title {{ index +1 }}</label>
+            <div class="control">
+              <input class="input" :id="titleId(index)" type="text" v-model="row.title" placeholder="Enter Title for card heading">
+            </div>
+          </div>
 
-    <div id="preview">
-      <img v-if="heroUrl" :src="heroUrl" />
-    </div>
+          <div class="field">
+            <label class="label">Card Message {{ index +1 }}</label>
+            <div class="control">
+              <textarea class="textarea" v-model="row.description" placeholder="Textarea"></textarea>
+            </div>
+          </div>
 
+          <div class="fileContainer">
+            <label class="label">Card image {{ index +1 }}</label>
+            <input type="file" @change="onFileChangeCards($event, index)" :id="index">
+          </div>
 
-    <div v-for="(row, index) in rows">
+        </div>
 
-      <div class="field">
-        <label class="label">Title</label>
-        <div class="control">
-          <input class="input" :id="titleId(index)" type="text" v-model="row.title" placeholder="Enter Title for card heading">
+        <div>
+            <button class="button is-primary" @click="addRow">Add card</button>
+            <a v-if="rows.length != 0" class="button is-danger" v-on:click="removeElement(index);" style="cursor: pointer">Remove</a>
         </div>
       </div>
 
-      <div class="field">
-        <label class="label">Message</label>
-        <div class="control">
-          <textarea class="textarea" v-model="row.description" placeholder="Textarea"></textarea>
-        </div>
-      </div>
-
-      <label class="fileContainer">
-        <input type="file"  @change="onFileChangeCards($event, index)" :id="index">
-      </label>
 
     </div>
 
-    <div>
-        <button class="button btn-primary" @click="addRow">Add row</button>
-        <a v-if="rows.length != 0" class="button btn-primary" v-on:click="removeElement(index);" style="cursor: pointer">Remove</a>
-    </div>
   </div>
 
   <!-- Display the page -->
   <div class="column is-8">
-    <section class="hero is-primary">
-      <div class="hero-body" :style="{ backgroundImage: 'url(' + heroUrl + ')' }">
-        <div class="container">
-          <h1 class="title">
+
+    <!-- Navbar block -->
+    <nav class="navbar is-transparent">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="#">
+          <img :src="logoUrl" :alt="name" >
+        </a>
+        <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <div id="navbarExampleTransparentExample" class="navbar-menu">
+
+        <div class="navbar-end">
+          <a class="navbar-item" href="#">
+            Home
+          </a>
+        </div>
+
+      </div>
+
+    </nav>
+
+
+    <section class="hero is-primary is-fullheight">
+      <div class="hero-body " :style="{ backgroundImage: 'url(' + heroUrl + ')' }">
+        <div class="container has-text-centered">
+          <h1 class="title is-size-1">
             {{ heading }}
           </h1>
-          <h2 class="subtitle">
+          <h2 class="subtitle is-size-3">
             {{ subtitle }}
           </h2>
+          <a class="button is-primary is-inverted is-outlined">button 1</a>
+          <a class="button is-primary is-inverted is-outlined">button 2</a>
         </div>
       </div>
     </section>
 
     <section class="hero is-light is-bold">
       <div class="hero-body">
-        <div class="text-center" v-html="content">
+        <div class="text-center body-content" v-html="content">
         </div>
         <div class="columns">
           <div v-for="(row, index) in rows" class="column">
 
             <div class="card">
 
-              <div class="card-image">
-                  <img v-if="row.url" :src="row.url" :alt="row.title">
-                  <img v-else src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+              <div class="card-image" :style="{ backgroundImage: 'url(' + row.url + ')' }">
+                  <img v-if="row.url" src="images/placeholder.png" :alt="row.title">
+                  <img v-else src="images/1280x960.png" alt="Placeholder image">
               </div>
 
               <div class="card-content">
@@ -104,8 +178,12 @@
 
       </div>
     </section>
+
+  </div>
+
+  <footer>
     
-</div>
+  </footer>
 
 </div>
 
@@ -118,10 +196,22 @@
 <script>
     import Editor from '@tinymce/tinymce-vue';
 
+    Vue.component('button-counter', {
+      data: function () {
+        return {
+          count: 0
+        }
+      },
+      template: '<div class="field"><label class="label">Heading</label><div class="control"><input class="input" v-model="heading" type="text" placeholder="Text input"></div></div>'
+    })
 
     export default {
         data() {
           return {
+            logoUrl:     null,
+            name: '',
+            phone: '',
+            email: '',
             heading:  'Heading',
             subtitle: 'Subtitle',
             content:  'The body content',
@@ -150,6 +240,10 @@
           onFileChangeHero(event) {
             const file = event.target.files[0];
             this.heroUrl = URL.createObjectURL(file);
+          },
+          onFileChangeLogo(event) {
+            const file = event.target.files[0];
+            this.logoUrl = URL.createObjectURL(file);
           },
 
           titleId: function (index) {

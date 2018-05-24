@@ -1,10 +1,20 @@
 @import "~bulma/bulma";
 
+$section-padding: 1em 1em 2em;
+$color-primary:  #00d1b2;
+
+// need to set api key
+.mce-notification {
+  display: none;
+}
 
 .text-center {
   text-align: center;
 }
 
+.navbar a {
+  text-decoration: none !important;
+}
 
 h1 {
   font-size: 2em;
@@ -24,4 +34,39 @@ h3 {
   margin: .25em 0;
   line-height: 1.5;
   font-weight: 400;
+}
+
+.navbar-item img {
+    max-height: 5.75rem;
+}
+
+.fileContainer {
+    margin-bottom: 2em;
+    display: block;
+}
+
+.is-fixed {
+    position: fixed;
+    overflow: scroll;
+    height: 100%;
+}
+
+
+.card-image {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.hero-section,
+.body-section,
+.company-section,
+.call-to-action-section {
+  padding: $section-padding;
+  margin-bottom: 1em;
+  border: 1px solid #ddd;
+}
+
+.body-content {
+  padding: 5em 0;
 }
