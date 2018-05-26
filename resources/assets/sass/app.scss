@@ -36,6 +36,10 @@ h3 {
   font-weight: 400;
 }
 
+.notification {
+  background: none;
+}
+
 .navbar-item img {
     max-height: 5.75rem;
 }
@@ -51,6 +55,24 @@ h3 {
     height: 100%;
 }
 
+.collaspe {
+  transition: all .5s ease;
+  overflow: hidden;
+  height: 100%;
+}
+
+.active + .collaspe {
+  height: 0;
+}
+
+.fa-sort-up {
+  transition: all .5s ease;
+  cursor: pointer;
+}
+
+.active.fa-sort-up {
+  transform: rotate(180deg);
+}
 
 .card-image {
   background-position: center;

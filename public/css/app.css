@@ -11547,6 +11547,10 @@ h3 {
   font-weight: 400;
 }
 
+.notification {
+  background: none;
+}
+
 .navbar-item img {
   max-height: 5.75rem;
 }
@@ -11560,6 +11564,28 @@ h3 {
   position: fixed;
   overflow: scroll;
   height: 100%;
+}
+
+.collaspe {
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  overflow: hidden;
+  height: 100%;
+}
+
+.active + .collaspe {
+  height: 0;
+}
+
+.fa-sort-up {
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  cursor: pointer;
+}
+
+.active.fa-sort-up {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 .card-image {

@@ -30806,17 +30806,34 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
-
-Vue.component('button-counter', {
-  data: function data() {
-    return {
-      count: 0
-    };
-  },
-  template: '<div class="field"><label class="label">Heading</label><div class="control"><input class="input" v-model="heading" type="text" placeholder="Text input"></div></div>'
-});
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -30825,9 +30842,9 @@ Vue.component('button-counter', {
       name: '',
       phone: '',
       email: '',
-      heading: 'Heading',
-      subtitle: 'Subtitle',
-      content: 'The body content',
+      heading: '',
+      subtitle: '',
+      content: '',
       heroUrl: null,
       rows: [],
       index: false
@@ -31078,420 +31095,528 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "columns" }, [
-    _c("div", { staticClass: "column is-4" }, [
-      _c("div", { staticClass: "is-fixed" }, [
-        _c("div", { staticClass: "company-section" }, [
-          _c("div", { staticClass: "fileContainer" }, [
-            _c("label", { staticClass: "label" }, [_vm._v("Conpany Logo")]),
+  return _c("div", {}, [
+    _c("div", { staticClass: "columns" }, [
+      _c("div", { staticClass: "column is-4" }, [
+        _c("div", { staticClass: "is-fixed" }, [
+          _c("div", { staticClass: "company-section" }, [
+            _c("span", { staticClass: "title is-size-4" }, [
+              _vm._v("Company details")
+            ]),
             _vm._v(" "),
-            _c("input", {
-              attrs: { type: "file" },
-              on: { change: _vm.onFileChangeLogo }
-            })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "field" }, [
-            _c("label", { staticClass: "label" }, [_vm._v("Company Name")]),
-            _vm._v(" "),
-            _c("div", { staticClass: "control" }, [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.name,
-                    expression: "name"
-                  }
-                ],
-                staticClass: "input",
-                attrs: { type: "text" },
-                domProps: { value: _vm.name },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.name = $event.target.value
-                  }
+            _c("i", {
+              staticClass: "fas fa-sort-up is-pulled-right active",
+              on: {
+                click: function($event) {
+                  $event.target.classList.toggle("active")
                 }
-              })
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "field" }, [
-            _c("label", { staticClass: "label" }, [_vm._v("Company Phone")]),
+              }
+            }),
             _vm._v(" "),
-            _c("div", { staticClass: "control" }, [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.phone,
-                    expression: "phone"
-                  }
-                ],
-                staticClass: "input",
-                attrs: { type: "text" },
-                domProps: { value: _vm.phone },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.phone = $event.target.value
-                  }
-                }
-              })
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "field" }, [
-            _c("label", { staticClass: "label" }, [_vm._v("Company Email")]),
-            _vm._v(" "),
-            _c("div", { staticClass: "control" }, [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.email,
-                    expression: "email"
-                  }
-                ],
-                staticClass: "input",
-                attrs: { type: "text" },
-                domProps: { value: _vm.email },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.email = $event.target.value
-                  }
-                }
-              })
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "hero-section" }, [
-          _c("div", { staticClass: "field" }, [
-            _c("label", { staticClass: "label" }, [_vm._v("Cover heading")]),
-            _vm._v(" "),
-            _c("div", { staticClass: "control" }, [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.heading,
-                    expression: "heading"
-                  }
-                ],
-                staticClass: "input",
-                attrs: { type: "text", placeholder: "Text input" },
-                domProps: { value: _vm.heading },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.heading = $event.target.value
-                  }
-                }
-              })
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "field" }, [
-            _c("label", { staticClass: "label" }, [_vm._v("Cover subtitle")]),
-            _vm._v(" "),
-            _c("div", { staticClass: "control" }, [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.subtitle,
-                    expression: "subtitle"
-                  }
-                ],
-                staticClass: "input",
-                attrs: { type: "text", placeholder: "Text input" },
-                domProps: { value: _vm.subtitle },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.subtitle = $event.target.value
-                  }
-                }
-              })
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "fileContainer" }, [
-            _c("label", { staticClass: "label" }, [_vm._v("Cover image")]),
-            _vm._v(" "),
-            _c("input", {
-              attrs: { type: "file" },
-              on: { change: _vm.onFileChangeHero }
-            })
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "body-section" }, [
-          _c("div", { staticClass: "field" }, [
-            _c("label", { staticClass: "label" }, [_vm._v("Welcome blurb")]),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "control" },
-              [
-                _c("editor", {
-                  model: {
-                    value: _vm.content,
-                    callback: function($$v) {
-                      _vm.content = $$v
-                    },
-                    expression: "content"
-                  }
+            _c("div", { staticClass: "collaspe" }, [
+              _c("div", { staticClass: "fileContainer" }, [
+                _c("label", { staticClass: "label" }, [_vm._v("Conpany Logo")]),
+                _vm._v(" "),
+                _c("input", {
+                  attrs: { type: "file" },
+                  on: { change: _vm.onFileChangeLogo }
                 })
-              ],
-              1
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "call-to-action-section" },
-          [
-            _c("h3", [_vm._v("Call to actions")]),
-            _vm._v(" "),
-            _vm._l(_vm.rows, function(row, index) {
-              return _c("div", [
-                _c("div", { staticClass: "field" }, [
-                  _c("label", { staticClass: "label" }, [
-                    _vm._v("Card title " + _vm._s(index + 1))
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "control" }, [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: row.title,
-                          expression: "row.title"
-                        }
-                      ],
-                      staticClass: "input",
-                      attrs: {
-                        id: _vm.titleId(index),
-                        type: "text",
-                        placeholder: "Enter Title for card heading"
-                      },
-                      domProps: { value: row.title },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(row, "title", $event.target.value)
-                        }
-                      }
-                    })
-                  ])
-                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "field" }, [
+                _c("label", { staticClass: "label" }, [_vm._v("Company Name")]),
                 _vm._v(" "),
-                _c("div", { staticClass: "field" }, [
-                  _c("label", { staticClass: "label" }, [
-                    _vm._v("Card Message " + _vm._s(index + 1))
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "control" }, [
-                    _c("textarea", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: row.description,
-                          expression: "row.description"
-                        }
-                      ],
-                      staticClass: "textarea",
-                      attrs: { placeholder: "Textarea" },
-                      domProps: { value: row.description },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(row, "description", $event.target.value)
-                        }
-                      }
-                    })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "fileContainer" }, [
-                  _c("label", { staticClass: "label" }, [
-                    _vm._v("Card image " + _vm._s(index + 1))
-                  ]),
-                  _vm._v(" "),
+                _c("div", { staticClass: "control" }, [
                   _c("input", {
-                    attrs: { type: "file", id: index },
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.name,
+                        expression: "name"
+                      }
+                    ],
+                    staticClass: "input",
+                    attrs: { type: "text" },
+                    domProps: { value: _vm.name },
                     on: {
-                      change: function($event) {
-                        _vm.onFileChangeCards($event, index)
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.name = $event.target.value
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "field" }, [
+                _c("label", { staticClass: "label" }, [
+                  _vm._v("Company Phone")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "control" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.phone,
+                        expression: "phone"
+                      }
+                    ],
+                    staticClass: "input",
+                    attrs: { type: "text" },
+                    domProps: { value: _vm.phone },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.phone = $event.target.value
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "field" }, [
+                _c("label", { staticClass: "label" }, [
+                  _vm._v("Company Email")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "control" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.email,
+                        expression: "email"
+                      }
+                    ],
+                    staticClass: "input",
+                    attrs: { type: "text" },
+                    domProps: { value: _vm.email },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.email = $event.target.value
                       }
                     }
                   })
                 ])
               ])
-            }),
-            _vm._v(" "),
-            _c("div", [
-              _c(
-                "button",
-                { staticClass: "button is-primary", on: { click: _vm.addRow } },
-                [_vm._v("Add card")]
-              ),
-              _vm._v(" "),
-              _vm.rows.length != 0
-                ? _c(
-                    "a",
-                    {
-                      staticClass: "button is-danger",
-                      staticStyle: { cursor: "pointer" },
-                      on: {
-                        click: function($event) {
-                          _vm.removeElement(_vm.index)
-                        }
-                      }
-                    },
-                    [_vm._v("Remove")]
-                  )
-                : _vm._e()
             ])
-          ],
-          2
-        )
-      ])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "column is-8" }, [
-      _c("nav", { staticClass: "navbar is-transparent" }, [
-        _c("div", { staticClass: "navbar-brand" }, [
-          _c("a", { staticClass: "navbar-item", attrs: { href: "#" } }, [
-            _c("img", { attrs: { src: _vm.logoUrl, alt: _vm.name } })
           ]),
           _vm._v(" "),
-          _vm._m(0)
-        ]),
-        _vm._v(" "),
-        _vm._m(1)
-      ]),
-      _vm._v(" "),
-      _c("section", { staticClass: "hero is-primary is-fullheight" }, [
-        _c(
-          "div",
-          {
-            staticClass: "hero-body ",
-            style: { backgroundImage: "url(" + _vm.heroUrl + ")" }
-          },
-          [
-            _c("div", { staticClass: "container has-text-centered" }, [
-              _c("h1", { staticClass: "title is-size-1" }, [
-                _vm._v(
-                  "\r\n            " + _vm._s(_vm.heading) + "\r\n          "
-                )
+          _c("div", { staticClass: "hero-section" }, [
+            _c("span", { staticClass: "title is-size-4" }, [
+              _vm._v("Cover Content")
+            ]),
+            _vm._v(" "),
+            _c("i", {
+              staticClass: "fas fa-sort-up is-pulled-right active",
+              on: {
+                click: function($event) {
+                  $event.target.classList.toggle("active")
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "collaspe" }, [
+              _c("div", { staticClass: "field" }, [
+                _c("label", { staticClass: "label" }, [
+                  _vm._v("Cover heading")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "control" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.heading,
+                        expression: "heading"
+                      }
+                    ],
+                    staticClass: "input",
+                    attrs: { type: "text", placeholder: "Text input" },
+                    domProps: { value: _vm.heading },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.heading = $event.target.value
+                      }
+                    }
+                  })
+                ])
               ]),
               _vm._v(" "),
-              _c("h2", { staticClass: "subtitle is-size-3" }, [
-                _vm._v(
-                  "\r\n            " + _vm._s(_vm.subtitle) + "\r\n          "
-                )
-              ]),
-              _vm._v(" "),
-              _c(
-                "a",
-                { staticClass: "button is-primary is-inverted is-outlined" },
-                [_vm._v("button 1")]
-              ),
-              _vm._v(" "),
-              _c(
-                "a",
-                { staticClass: "button is-primary is-inverted is-outlined" },
-                [_vm._v("button 2")]
-              )
-            ])
-          ]
-        )
-      ]),
-      _vm._v(" "),
-      _c("section", { staticClass: "hero is-light is-bold" }, [
-        _c("div", { staticClass: "hero-body" }, [
-          _c("div", {
-            staticClass: "text-center body-content",
-            domProps: { innerHTML: _vm._s(_vm.content) }
-          }),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "columns" },
-            _vm._l(_vm.rows, function(row, index) {
-              return _c("div", { staticClass: "column" }, [
-                _c("div", { staticClass: "card" }, [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "card-image",
-                      style: { backgroundImage: "url(" + row.url + ")" }
-                    },
-                    [
-                      row.url
-                        ? _c("img", {
-                            attrs: {
-                              src: "images/placeholder.png",
-                              alt: row.title
-                            }
-                          })
-                        : _c("img", {
-                            attrs: {
-                              src: "images/1280x960.png",
-                              alt: "Placeholder image"
-                            }
-                          })
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "card-content" }, [
-                    _c("div", { staticClass: "title is-4" }, [
-                      _vm._v(_vm._s(row.title))
+              _vm.heading
+                ? _c("div", { staticClass: "field" }, [
+                    _c("label", { staticClass: "label" }, [
+                      _vm._v("Cover subtitle")
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "content" }, [
-                      _vm._v(
-                        "\r\n                  " +
-                          _vm._s(row.description) +
-                          "\r\n                "
-                      )
+                    _c("div", { staticClass: "control" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.subtitle,
+                            expression: "subtitle"
+                          }
+                        ],
+                        staticClass: "input",
+                        attrs: { type: "text", placeholder: "Text input" },
+                        domProps: { value: _vm.subtitle },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.subtitle = $event.target.value
+                          }
+                        }
+                      })
                     ])
                   ])
-                ])
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.heading
+                ? _c("div", { staticClass: "fileContainer" }, [
+                    _c("label", { staticClass: "label" }, [
+                      _vm._v("Cover image")
+                    ]),
+                    _vm._v(" "),
+                    _c("input", {
+                      attrs: { type: "file" },
+                      on: { change: _vm.onFileChangeHero }
+                    })
+                  ])
+                : _vm._e()
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "body-section" }, [
+            _c("span", { staticClass: "title is-size-4" }, [
+              _vm._v("Body Content details")
+            ]),
+            _vm._v(" "),
+            _c("i", {
+              staticClass: "fas fa-sort-up is-pulled-right active",
+              on: {
+                click: function($event) {
+                  $event.target.classList.toggle("active")
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "collaspe" }, [
+              _c("div", { staticClass: "field" }, [
+                _c("label", { staticClass: "label" }, [
+                  _vm._v("Welcome blurb")
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "control" },
+                  [
+                    _c("editor", {
+                      model: {
+                        value: _vm.content,
+                        callback: function($$v) {
+                          _vm.content = $$v
+                        },
+                        expression: "content"
+                      }
+                    })
+                  ],
+                  1
+                )
               ])
-            })
-          )
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "call-to-action-section" }, [
+            _c("span", { staticClass: "title is-size-4" }, [
+              _vm._v("Call to actions")
+            ]),
+            _vm._v(" "),
+            _c("i", {
+              staticClass: "fas fa-sort-up is-pulled-right active",
+              on: {
+                click: function($event) {
+                  $event.target.classList.toggle("active")
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "collaspe" },
+              [
+                _vm._l(_vm.rows, function(row, index) {
+                  return _c("div", [
+                    _c("span", { staticClass: "title is-size-6" }, [
+                      _vm._v("Card title " + _vm._s(index + 1))
+                    ]),
+                    _vm._v(" "),
+                    _c("i", {
+                      staticClass: "fas fa-sort-up is-pulled-right",
+                      on: {
+                        click: function($event) {
+                          $event.target.classList.toggle("active")
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "collaspe" }, [
+                      _c("div", { staticClass: "field" }, [
+                        _c("div", { staticClass: "control" }, [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: row.title,
+                                expression: "row.title"
+                              }
+                            ],
+                            staticClass: "input",
+                            attrs: {
+                              id: _vm.titleId(index),
+                              type: "text",
+                              placeholder: "Enter Title for card heading"
+                            },
+                            domProps: { value: row.title },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(row, "title", $event.target.value)
+                              }
+                            }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "field" }, [
+                        _c("label", { staticClass: "label" }, [
+                          _vm._v("Card Message " + _vm._s(index + 1))
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "control" }, [
+                          _c("textarea", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: row.description,
+                                expression: "row.description"
+                              }
+                            ],
+                            staticClass: "textarea",
+                            attrs: { placeholder: "Textarea" },
+                            domProps: { value: row.description },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  row,
+                                  "description",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "fileContainer" }, [
+                        _c("label", { staticClass: "label" }, [
+                          _vm._v("Card image " + _vm._s(index + 1))
+                        ]),
+                        _vm._v(" "),
+                        _c("input", {
+                          attrs: { type: "file", id: index },
+                          on: {
+                            change: function($event) {
+                              _vm.onFileChangeCards($event, index)
+                            }
+                          }
+                        })
+                      ])
+                    ])
+                  ])
+                }),
+                _vm._v(" "),
+                _c("div", [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "button is-primary",
+                      on: { click: _vm.addRow }
+                    },
+                    [_vm._v("Add card")]
+                  ),
+                  _vm._v(" "),
+                  _vm.rows.length != 0
+                    ? _c(
+                        "a",
+                        {
+                          staticClass: "button is-danger",
+                          staticStyle: { cursor: "pointer" },
+                          on: {
+                            click: function($event) {
+                              _vm.removeElement(_vm.index)
+                            }
+                          }
+                        },
+                        [_vm._v("Remove")]
+                      )
+                    : _vm._e()
+                ])
+              ],
+              2
+            )
+          ])
         ])
-      ])
-    ]),
-    _vm._v(" "),
-    _c("footer")
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "column is-8" }, [
+        _vm.logoUrl
+          ? _c("nav", { staticClass: "navbar is-transparent" }, [
+              _c("div", { staticClass: "navbar-brand" }, [
+                _c("a", { staticClass: "navbar-item", attrs: { href: "#" } }, [
+                  _c("img", { attrs: { src: _vm.logoUrl, alt: _vm.name } })
+                ]),
+                _vm._v(" "),
+                _vm._m(0)
+              ]),
+              _vm._v(" "),
+              _vm._m(1)
+            ])
+          : _vm._e(),
+        _vm._v(" "),
+        _vm.heading
+          ? _c("section", { staticClass: "hero is-primary is-fullheight" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "hero-body ",
+                  style: { backgroundImage: "url(" + _vm.heroUrl + ")" }
+                },
+                [
+                  _c("div", { staticClass: "container has-text-centered" }, [
+                    _c("h1", { staticClass: "title is-size-1" }, [
+                      _vm._v(
+                        "\r\n              " +
+                          _vm._s(_vm.heading) +
+                          "\r\n            "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("h2", { staticClass: "subtitle is-size-3" }, [
+                      _vm._v(
+                        "\r\n              " +
+                          _vm._s(_vm.subtitle) +
+                          "\r\n            "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      {
+                        staticClass: "button is-primary is-inverted is-outlined"
+                      },
+                      [_vm._v("button 1")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      {
+                        staticClass: "button is-primary is-inverted is-outlined"
+                      },
+                      [_vm._v("button 2")]
+                    )
+                  ])
+                ]
+              )
+            ])
+          : _vm._e(),
+        _vm._v(" "),
+        _vm.content
+          ? _c("section", { staticClass: "hero is-light is-bold" }, [
+              _c("div", { staticClass: "hero-body" }, [
+                _c("div", {
+                  staticClass: "text-center body-content",
+                  domProps: { innerHTML: _vm._s(_vm.content) }
+                }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "columns" },
+                  _vm._l(_vm.rows, function(row, index) {
+                    return _c("div", { staticClass: "column" }, [
+                      _c("div", { staticClass: "card" }, [
+                        _c(
+                          "div",
+                          {
+                            staticClass: "card-image",
+                            style: { backgroundImage: "url(" + row.url + ")" }
+                          },
+                          [
+                            row.url
+                              ? _c("img", {
+                                  attrs: {
+                                    src: "images/placeholder.png",
+                                    alt: row.title
+                                  }
+                                })
+                              : _c("img", {
+                                  attrs: {
+                                    src: "images/1280x960.png",
+                                    alt: "Placeholder image"
+                                  }
+                                })
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "card-content" }, [
+                          _c("div", { staticClass: "title is-4" }, [
+                            _vm._v(_vm._s(row.title))
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "content" }, [
+                            _vm._v(
+                              "\r\n                    " +
+                                _vm._s(row.description) +
+                                "\r\n                  "
+                            )
+                          ])
+                        ])
+                      ])
+                    ])
+                  })
+                )
+              ])
+            ])
+          : _vm._e()
+      ]),
+      _vm._v(" "),
+      _c("footer")
+    ])
   ])
 }
 var staticRenderFns = [
@@ -31521,7 +31646,7 @@ var staticRenderFns = [
       [
         _c("div", { staticClass: "navbar-end" }, [
           _c("a", { staticClass: "navbar-item", attrs: { href: "#" } }, [
-            _vm._v("\r\n            Home\r\n          ")
+            _vm._v("\r\n              Home\r\n            ")
           ])
         ])
       ]
