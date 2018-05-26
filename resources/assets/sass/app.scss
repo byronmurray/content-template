@@ -55,13 +55,13 @@ h3 {
     height: 100%;
 }
 
-.collaspe {
+.collapse {
   transition: all .5s ease;
   overflow: hidden;
   height: 100%;
 }
 
-.active + .collaspe {
+.active + .collapse {
   height: 0;
 }
 

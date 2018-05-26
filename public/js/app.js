@@ -31113,7 +31113,7 @@ var render = function() {
               }
             }),
             _vm._v(" "),
-            _c("div", { staticClass: "collaspe" }, [
+            _c("div", { staticClass: "collapse" }, [
               _c("div", { staticClass: "fileContainer" }, [
                 _c("label", { staticClass: "label" }, [_vm._v("Conpany Logo")]),
                 _vm._v(" "),
@@ -31227,7 +31227,7 @@ var render = function() {
               }
             }),
             _vm._v(" "),
-            _c("div", { staticClass: "collaspe" }, [
+            _c("div", { staticClass: "collapse" }, [
               _c("div", { staticClass: "field" }, [
                 _c("label", { staticClass: "label" }, [
                   _vm._v("Cover heading")
@@ -31319,7 +31319,7 @@ var render = function() {
               }
             }),
             _vm._v(" "),
-            _c("div", { staticClass: "collaspe" }, [
+            _c("div", { staticClass: "collapse" }, [
               _c("div", { staticClass: "field" }, [
                 _c("label", { staticClass: "label" }, [
                   _vm._v("Welcome blurb")
@@ -31361,7 +31361,7 @@ var render = function() {
             _vm._v(" "),
             _c(
               "div",
-              { staticClass: "collaspe" },
+              { staticClass: "collapse" },
               [
                 _vm._l(_vm.rows, function(row, index) {
                   return _c("div", [
@@ -31378,7 +31378,7 @@ var render = function() {
                       }
                     }),
                     _vm._v(" "),
-                    _c("div", { staticClass: "collaspe" }, [
+                    _c("div", { staticClass: "collapse" }, [
                       _c("div", { staticClass: "field" }, [
                         _c("div", { staticClass: "control" }, [
                           _c("input", {

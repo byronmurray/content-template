@@ -14,7 +14,7 @@
           <i class="fas fa-sort-up is-pulled-right active" @click="$event.target.classList.toggle('active')"></i>
 
 
-          <div class="collaspe">
+          <div class="collapse">
             <div class="fileContainer">
               <label class="label">Conpany Logo</label>
               <input type="file" @change="onFileChangeLogo" />
@@ -48,7 +48,7 @@
           <span class="title is-size-4">Cover Content</span>
           <i class="fas fa-sort-up is-pulled-right active" @click="$event.target.classList.toggle('active')"></i>
 
-          <div class="collaspe">
+          <div class="collapse">
             <div class="field">
               <label class="label">Cover heading</label>
               <div class="control">
@@ -75,7 +75,7 @@
           <span class="title is-size-4">Body Content details</span>
           <i class="fas fa-sort-up is-pulled-right active" @click="$event.target.classList.toggle('active')"></i>
 
-          <div class="collaspe">
+          <div class="collapse">
             <div class="field">
               <label class="label">Welcome blurb</label>
               <div class="control">
@@ -90,12 +90,12 @@
           <span class="title is-size-4">Call to actions</span>
           <i class="fas fa-sort-up is-pulled-right active" @click="$event.target.classList.toggle('active')"></i>
 
-          <div class="collaspe">
+          <div class="collapse">
             <div v-for="(row, index) in rows">
               <span class="title is-size-6">Card title {{ index +1 }}</span>
               <i class="fas fa-sort-up is-pulled-right" @click="$event.target.classList.toggle('active')"></i>
 
-              <div class="collaspe">
+              <div class="collapse">
                 <div class="field">
                   <div class="control">
                     <input class="input" :id="titleId(index)" type="text" v-model="row.title" placeholder="Enter Title for card heading">
