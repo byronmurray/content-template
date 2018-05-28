@@ -20,21 +20,21 @@
               <input type="file" @change="onFileChangeLogo" />
             </div>
 
-            <div class="field">
+            <div v-if="logoUrl" class="field">
               <label class="label">Company Name</label>
               <div class="control">
                 <input class="input" v-model="name" type="text">
               </div>
             </div>
 
-            <div class="field">
+            <div v-if="name" class="field">
               <label class="label">Company Phone</label>
               <div class="control">
                 <input class="input" v-model="phone" type="text">
               </div>
             </div>
 
-            <div class="field">
+            <div v-if="phone" class="field">
               <label class="label">Company Email</label>
               <div class="control">
                 <input class="input" v-model="email" type="text">
@@ -132,30 +132,7 @@
     <!-- Display the page -->
     <div class="column is-8">
 
-      <!-- Navbar block -->
-      <nav v-if="logoUrl" class="navbar is-transparent">
-        <div class="navbar-brand">
-          <a class="navbar-item" href="#">
-            <img :src="logoUrl" :alt="name" >
-          </a>
-          <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </div>
-
-        <div id="navbarExampleTransparentExample" class="navbar-menu">
-
-          <div class="navbar-end">
-            <a class="navbar-item" href="#">
-              Home
-            </a>
-          </div>
-
-        </div>
-
-      </nav>
+    <navbar></navbar>
 
 
       <section v-if="heading" class="hero is-primary is-fullheight">
@@ -204,11 +181,16 @@
         </div>
       </section>
 
+      <footer v-if="name">
+        <div class="">
+          <span>@ {{ name }} 2018.</span> <span> {{ phone }} </span> <span> {{ email }} </span>
+        </div>
+      </footer>
+
+
     </div>
 
-    <footer>
 
-    </footer>
 
   </div>
 
@@ -221,6 +203,7 @@
 
 <script>
     import Editor from '@tinymce/tinymce-vue';
+    import navbar from './NavBar.vue';
 
     export default {
         data() {

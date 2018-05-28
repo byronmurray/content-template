@@ -11607,3 +11607,11 @@ h3 {
   padding: 5em 0;
 }
 
+footer {
+  padding: 2em;
+  width: 100%;
+  text-align: center;
+  background: #ccc;
+  color: #fff;
+}
+
